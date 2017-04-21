@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body ng-app="mapp">
+<div ng-controller="parentCtrl">
+
+    <input type="text" ng-model="ptxt"><br>
+    <button ng-click="pass()">从父控制器到子控制器</button>
+    <br>
+    childCtrl1:
+    <div ng-controller="childCtrl1">
+        <input type="text" ng-model="ctxt">
+    </div>
+    <br>
+    childCtrl2:
+    <div ng-controller="childCtrl2">
+        <button ng-click="childToParent()">从子到父传值</button>
+        <input type="text" ng-model="ctxt">
+    </div>
+    <br>
+    childCtrl3:
+    <div ng-controller="childCtrl3">
+        <input type="text" ng-model="ctxt">
+    </div>
+</div>
+
+
+<script src="../angular.min.js"></script>
+<script>
+    angular.module('mapp',[])
+        .controller('parentCtrl',function ($scope) {
+            $scope.pass = function () {
+                $scope.$broadcast('number',$scope.ptxt)
+            };
+
+            $scope.$on('str',function (event,data) {
+                $scope.ptxt = data;
+            })
+        })
+        .controller('childCtrl1',function ($scope) {
+            $scope.$on('number',function (event,data) {
+                console.log(data);
+                $scope.ctxt = data;
+            })
+        })
+        .controller('childCtrl2',function ($scope) {
+            $scope.childToParent = function () {
+                $scope.$emit('str',$scope.ctxt)
+            }
+        })
+        .controller('childCtrl3',function ($scope) {
+
+        })
+</script>
+</body>
+</html>

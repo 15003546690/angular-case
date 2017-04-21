@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .nav{
+            width: 800px;
+            height: 44px;
+            border: 1px solid #333;
+            margin:10px auto;
+        }
+        .nav span{
+            width: 25%;
+            float: left;
+            text-align: center;
+            line-height: 44px;
+            border-right: 1px solid green;
+        }
+        .content{
+            border: 3px solid blue;
+            width: 800px;
+            min-height: 500px;
+            margin: auto;
+        }
+        .active{
+            background: red;
+        }
+    </style>
+</head>
+<body ng-app="myapp">
+    <div class="nav">
+        <span ui-sref="home" ui-sref-active="active">首页</span>
+        <span ui-sref="list" ui-sref-active="active">列表</span>
+        <span ui-sref="detail" ui-sref-active="active">详情</span>
+        <span ui-sref="fill" ui-sref-active="active">填写</span>
+    </div>
+    <div ui-view class="content"></div>
+    <script src="angular.min.js"></script>
+    <script src="angular-ui-router.min.js"></script>
+    <script>
+        var app=angular.module('myapp',['ui.router']);
+        app.config(function($stateProvider,$urlRouterProvider){
+            $urlRouterProvider.otherwise("/");
+            $stateProvider
+             .state('home',{
+             url:'/',
+             template:'<div>this is home'+
+             '<div>{{info}}</div>'+
+             '</div>',
+             controller:'homeCtro'
+             })
+             .state('list',{
+             url:'/list',
+             templateUrl:'page/list.html'
+             })
+             .state('detail',{
+             url:'/detail',
+             template:'<div>this is detail</div>'
+             })
+             .state('fill',{
+             url:'/fill',
+             template:'<div>this is fill</div>'
+             })
+        });
+        app.controller('homeCtro',function($scope){
+            $scope.info='test.....'
+        })
+    </script>
+</body>
+</html>

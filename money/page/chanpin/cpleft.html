@@ -1,0 +1,35 @@
+<div class="money-main" >
+
+    <div class="money-list" ng-controller="CpLeftCtrl">
+        <div class="money-list-box" ng-repeat="i in data.data.list">
+            <div class="money-list-top">
+                <span>{{i.safeguardWay}}</span><span>{{i.name}}</span>
+            </div>
+            <div class="money-list-bottom">
+                <p>{{i.annualRate}}</p>
+                <p class="money-list-bottom-two">
+                    <span>年化收益</span>
+                    <span>.0%</span>
+                </p>
+                <p class="money-list-bottom-three">
+                    <span>期限</span>
+                    <span>{{i.investmentHorizon}}</span>
+                </p>
+                <p>
+                    <my-canvas cvs="i"></my-canvas>
+                    <span>抢购</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tier" ng-if="flag">
+    <div class="tier-opcity"></div>
+    <div class="tier-filter flt" id="aaa">
+        <p><span class="bgg"></span><span>全部</span></p>
+        <p><span></span><span>押车宝</span></p>
+        <p><span></span><span>流水宝</span></p>
+        <p><span></span><span>黄金宝</span></p>
+        <p><span></span><span>体验宝</span></p>
+    </div>
+</div>

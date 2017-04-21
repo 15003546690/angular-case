@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myapp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div ng-controller='MCtro'>
+		<p ng-bind='data'></p>
+	</div>
+	<script src="angular.min.js"></script>
+	<script>
+		var app=angular.module('myapp',[]);
+			/*Filter自定义过滤器*/
+			app.filter('name',function(){
+				return function(data){
+				};
+			});
+			/*value 一般用于存储动态数据*/
+			app.value('tmp',{code:222});
+			/*service自定义服务,一般用于定义一个对象*/
+			app.service('serv',function(){
+				this.name='chaogege';
+				this.getName=function(){
+						console.log(this.name);
+				};
+			});
+			/*factory一般用于定义多个对象*/
+			app.factory('_tmp',function(){
+				function _tmp(){
+					this.name='baba';
+					this.getName=function(){
+						console.log(this.name)
+					}
+				}
+				return new _tmp()
+			});
+			/*provider是其他服务的底层服务，唯一能在config阶段使用的服务*/
+			/*app.provider('prov',function(){
+				this.id=4;
+				this.$get=function(){
+					var that=this;
+					return{
+						fn:function(){
+							alert(that.id)
+						}
+					}
+				}
+			});
+			app.config(function(prov){
+				prov.id=8;
+			});*/
+			app.controller('MCtro',function($scope,tmp,_tmp,serv,$http,$timeout,$location){
+				$http.get('new.json')
+					.success(function(data){
+						console.log(data);
+						$scope.data=data.code;
+					});
+				$timeout(function(){
+					alert(1)
+				},2000);
+				_tmp.getName();
+				console.log($location.absUrl());
+				console.log(location.href);
+				console.log(tmp.code);
+				console.log(serv);
+				//prov.fn();
+				serv.getName();
+			})
+	</script>
+</body>
+</html>

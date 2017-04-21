@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="my-directive"></div>
+    <my-directive></my-directive>
+    <div my-directive></div>
+    <script src="angular.min.js"></script>
+    <script src="angular-ui-router.min.js"></script>
+    <script>
+        var app=angular.module('myapp',[]);
+            app.directive('myDirective',function(){
+                return{
+                    restrict:'ACE',
+                    template:'<div>{{tmp}}</div>',
+                    controller:'MCtrc'
+                }
+            });
+            app.controller('MCtrc',function($scope){
+                $scope.tmp='这是controller创建的'
+            })
+    </script>
+</body>
+</html>

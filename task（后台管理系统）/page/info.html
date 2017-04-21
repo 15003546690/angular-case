@@ -1,0 +1,11 @@
+<div class="add-box">
+    <h2>后台管理系统</h2>
+
+    <p>产品列表</p>
+
+    <p><span>请输入关键字：</span><input type="text" ng-model="txt"/></p>
+    <div ng-repeat="i in data | filter:_filter">
+        <span>{{i.text1}}</span>--
+        <span>{{i.text2}}</span>
+    </div>
+</div>

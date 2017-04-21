@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            padding-top: 20px;
+            width: 150px;
+            height: 500px;
+            background: deepskyblue;
+
+            float: left;
+        }
+
+        ul li {
+            padding-left: 25px;
+            list-style: none;
+            font-size: 16px;
+            line-height: 50px;
+            cursor: pointer;
+        }
+
+        .box {
+            width: 300px;
+            background: greenyellow;
+            float: left;
+            width: 700px;
+            height: 550px;
+            padding: 20px;
+        }
+
+        p {
+            line-height: 40px;
+        }
+
+        .active {
+            background: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li ui-sref="add" ui-sref-active="active">添加产品信息</li>
+    <li ui-sref="info" ui-sref-active="active">产品信息列表</li>
+</ul>
+<div class="box" ui-view>
+
+</div>
+<script src="angular.min.js"></script>
+<script src="angular-ui-router.min.js"></script>
+<script>
+    var app = angular.module('myapp', ['ui.router']);
+    app.config(function ($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('add');
+        $stateProvider
+                .state('add', {
+                    url: '/add',
+                    templateUrl: 'page/add.html',
+                    controller: 'addCtrl'
+                })
+                .state('info', {
+                    url: '/info',
+                    templateUrl: 'page/info.html',
+                    controller:'infoCtrl'
+                })
+    });
+    app.controller('addCtrl', function ($scope) {
+        $scope.fn = function () {
+            localStorage.setItem('text1', $scope.text1);
+            localStorage.setItem('text2', $scope.text2);
+        }
+    });
+    var arr=[];
+    app.controller('infoCtrl',function($scope){
+        var obj={
+            text1:localStorage.getItem('text1'),
+            text2:localStorage.getItem('text2')
+        };
+        arr.push(obj);
+        $scope.data=arr;
+        $scope.txt='';
+        $scope._filter=function(data){
+            console.log(data)
+            console.log($scope.txt)
+            console.log(data.text1)
+            if(data.text1.indexOf($scope.txt)>-1){
+                return data
+            }
+        }
+    })
+</script>
+</body>
+</html>

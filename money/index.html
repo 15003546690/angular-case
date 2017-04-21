@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="lib/reset.css"/>
+    <link rel="stylesheet" href="lib/Swiper-3.4.0/dist/css/swiper.min.css"/>
+    <link rel="stylesheet" href="lib/font/css/font-awesome.min.css"/>
+</head>
+<body>
+    <div class="money-box">
+        <div ui-view="">
+
+        </div>
+        <footer class="money-footer footer">
+            <a href="javascript:;" ui-sref="home" ui-sref-active="active">
+                <i class="bg"></i>
+                <span>首页</span>
+            </a>
+            <a href="javascript:;" ui-sref="chanpin" ui-sref-active="active">
+                <i></i>
+                <span>理财产品</span>
+            </a>
+            <a href="javascript:;" ui-sref="my" ui-sref-active="active">
+                <i></i>
+                <span>我的账户</span>
+            </a>
+            <a href="javascript:;" ui-sref="more" ui-sref-active="active">
+                <i></i>
+                <span>更多</span>
+            </a>
+        </footer>
+    </div>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/config.js"></script>
+    <script src="lib/Swiper-3.4.0/dist/js/swiper.min.js"></script>
+    <script src="js/homeCtrl.js"></script>
+    <script src="js/chanpinCtrl.js"></script>
+    <script src="js/CpLeftCtrl.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+</html>

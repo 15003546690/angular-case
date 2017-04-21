@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-app='mapp'>
+	<div ng-controller='MCtro'>
+		<input type="text" ng-model='txt1'>
+		<input type="text" ng-model='txt2' ng-blur='add()'>
+		<div>
+			{{result}}
+		</div>
+		<button ng-click='toggle()'>toggle</button>
+		<div ng-if='flag' ng-style='styles'></div>
+		<div ng-include="'index.html'"></div>
+	</div>
+	
+	<script src="angular.min.js"></script>
+	<script>
+		var app=angular.module('mapp',[]);
+			//方法1
+			/*app.controller('MCtro',function($scope){
+				$scope.txt1=100;
+				$scope.txt2=300;
+				$scope.add=function(){
+					$scope.result=$scope.txt1+$scope.txt2
+				}
+			})*/
+			//方法2
+			app.controller('MCtro',['$scope',function(temp){
+				temp.txt1=100;
+				temp.txt2=300;
+				temp.styles={
+					width:'200px',
+					height:'100px',
+					border:'solid 1px #red',
+					background:'#00f'
+				};
+				temp.add=function(){
+					temp.result=temp.txt1+temp.txt2
+				};
+				temp.toggle=function(){
+					temp.flag=!temp.flag;
+				}
+			}])
+	</script>
+</body>
+</html>

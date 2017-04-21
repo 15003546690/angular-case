@@ -1,0 +1,162 @@
+.video-wrap{
+  width: 100%;
+}
+.video-header{
+  width:100%;
+  height:44px;
+  position:fixed;
+  z-index: 99;
+  top:0;
+  background:#333333;
+  h2{
+    position:absolute;
+    left:80px;
+    right:80px;
+    top:0;
+    line-height:44px;
+    text-align:center;
+    font-size:18px;
+    color:#fff;
+    font-weight:normal;
+    img{
+      width:25px;
+      height: 25px;
+      margin-top: -9px;
+      margin-right: 10px
+    }
+  }
+  .icon-group{
+    height:44px;
+    padding:0 5px;
+    display:-webkit-box;
+    -webkit-box-align:center;
+    &.left-icon-group{
+      float:left;
+    }
+    &.right-icon-group{
+      float:right;
+    }
+    .icon{
+      display:block;
+      width:30px;
+      height:30px;
+      text-align:center;
+      line-height:30px;
+      font-size:32px;
+      color:#fff;
+      img{
+        margin-top: -9px;
+        margin-right: 10px
+      }
+    }
+  }
+}
+.video-footer{
+  width:100%;
+  position:fixed;
+  bottom:0;
+  border-top:1px solid #ccc;
+  height:44px;
+  display:-webkit-box;
+  text-align:center;
+  background: #333333;
+  a:hover{
+    color: #FFFFFF;
+  }
+  a{
+    line-height: 34px;
+    padding-top:5px;
+    display:block;
+    -webkit-box-flex:1;
+    color: #33597b;
+    i{
+      margin:0 auto;
+      display:block;
+      width:24px;
+      height:24px;
+    }
+    span{
+      color:#33597b;
+      display: block;
+      margin-top: 5px;
+    }
+  }
+}
+.video-main{
+  width: 100%;
+  overflow: hidden;
+  .video-main-banner{
+    width: 100%;
+    padding-top: 44px;
+    img{
+      width: 100%;
+    }
+  }
+  .food-info-cate{
+    padding: 10px;
+    width: 100%;
+    display: -webkit-box;
+    dl{
+      width: 45%;
+      margin-right: 5px;
+      dt{
+        img{
+          width: 100%;
+        }
+      }
+      dd{
+        line-height: 20px;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        color: #5f5f5f;
+      }
+      .d-text{
+        color: #9d9d9d;
+      }
+    }
+  }
+}
+.video-search{
+  box-sizing: border-box;
+  padding: 15px 10px;
+  width: 100%;
+  background:#e7e5e5;
+  margin-top: 44px;
+  input{
+    width: 75%;
+    border: solid 1px #cccccc;
+    height: 35px;
+    padding-left: 10px;
+  }
+  button{
+    background:#336699;
+    border: none;
+    width: 15%;
+    height: 35px;
+    margin-left: -3px;
+    color: #FFFFFF;
+  }
+  .video-search-content{
+
+    width: 100%;
+    p{
+      font-size: 14px;
+      font-weight:bold;
+      line-height: 30px;
+    }
+    ol{
+      height: 100%;
+      background: #FFFFFF;
+      list-style-type: circle;
+      li{
+        line-height: 40px;
+        border-bottom: solid 1px #c0c4cd;
+        padding-left: 20px;
+      }
+    }
+  }
+}
+.active{
+  color: #FFFFFF;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "gulp",
+  "version": "1.0.0",
+  "description": "this is a gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "gulp scss"
+  },
+  "keywords": [
+    "gulp",
+    "scss"
+  ],
+  "author": "chaogege",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-sass": "^3.1.0",
+    "gulp-scss": "^1.4.0"
+  }
+}

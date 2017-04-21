@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .nav{
+            width: 800px;
+            height: 44px;
+            border: 1px solid #333;
+            margin:10px auto;
+        }
+        .nav span{
+            width: 25%;
+            float: left;
+            text-align: center;
+            line-height: 44px;
+            border-right: 1px solid green;
+        }
+        .content{
+            border: 3px solid blue;
+            width: 800px;
+            min-height: 500px;
+            margin: auto;
+        }
+        .new-box{
+            border: solid 1px red;
+        }
+        .active{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <span ui-sref="home" ui-sref-active="active">首页</span>
+    <span ui-sref="list" ui-sref-active="active">列表</span>
+    <span ui-sref="detail" ui-sref-active="active">详情</span>
+    <span ui-sref="fill" ui-sref-active="active">填写</span>
+</div>
+<div ui-view="" class="content"></div>
+<script src="angular.min.js"></script>
+<script src="../ionic/lib/angular-ui-router.min.js"></script>
+<script>
+    var app=angular.module('myapp',['ui.router']);
+        app.config(function($stateProvider,$urlRouterProvider){
+            $urlRouterProvider.otherwise('/home');
+            $stateProvider
+                    .state('home',{
+                        url:'/home',
+                        template:'<div>this is a home</div>'
+                    })
+                    .state('list',{
+                        url:'/list',
+                        templateUrl:'page/list.html'
+                    })
+                    .state('detail',{
+                        url:'/detail',
+                        template:'<div>this is a home</div>'
+                    })
+                    .state('fill',{
+                        url:'/fill',
+                        template:'<div>this is a home</div>'
+                    })
+                    .state('list.news1',{
+                        url:'/news1',
+                        template:'<div>new11111111111111111111</div>'
+                    })
+                    .state('list.news2',{
+                        url:'/news2',
+                        template:'<div>new2222222222222222222222</div>'
+                    })
+        })
+</script>
+</body>
+</html>

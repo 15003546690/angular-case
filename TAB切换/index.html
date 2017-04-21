@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .nav{
+            width: 300px;
+            height: 44px;
+            margin:10px auto;
+        }
+        .nav div{
+            float: left;
+            text-align: center;
+            line-height: 44px;
+        }
+        .nav div span{
+            display: inline-block;
+            width: 98px;
+            border: solid 1px #000000;
+        }
+        .content div{
+            border:1px solid;
+            width: 300px;
+            min-height: 100px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="my-directive"></div>
+    <div class="my-directivee"></div>
+    <div class="my-directiveee"></div>
+</div>
+<div class="content">
+    <div ng-if='flag'>篮球</div>
+    <div ng-if='flagg'>足球</div>
+    <div ng-if='flaggg'>排球</div>
+</div>
+<script src="angular.min.js"></script>
+<script>
+    var app=angular.module('myapp',[]);
+    app.directive('myDirective',function(){
+        return{
+            restrict:'C',
+            template:'<span ng-click="toggle()">篮球</span>',
+            controller:'MCtrc'
+        }
+    });
+    app.controller('MCtrc',function($scope){
+        $scope.toggle=function(){
+            $scope.flag=!$scope.flag;
+        }
+    });
+    app.directive('myDirectivee',function(){
+        return{
+            restrict:'C',
+            template:'<span ng-click="togglee()">足球</span>',
+            controller:'MCtrcc'
+        }
+    });
+    app.controller('MCtrcc',function($scope){
+        $scope.togglee=function(){
+            $scope.flagg=!$scope.flagg;
+        }
+    });
+    app.directive('myDirectiveee',function(){
+        return{
+            restrict:'C',
+            template:'<span ng-click="toggleee()">排球</span>',
+            controller:'MCtrccc'
+        }
+    });
+    app.controller('MCtrccc',function($scope){
+        $scope.toggleee=function(){
+            $scope.flaggg=!$scope.flaggg;
+        }
+    });
+/*    app.run(function($rootScope){
+
+    })*/
+</script>
+</body>
+</html>

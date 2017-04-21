@@ -1,0 +1,61 @@
+<header class="money-header">
+    <div class="icon-group left-icon-group">
+
+    </div>
+    <h2><img src="images/header-icon.jpg" alt=""/>开财宝</h2>
+    <div class="icon-group right-icon-group">
+        <a href="" class="icon add-icon"><img src="images/header-right-icon.jpg" alt=""/></a>
+    </div>
+</header>
+<div class="money-main">
+    <div class="money-main-banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="//img.alicdn.com/imgextra/i2/200/TB2ogChhohnpuFjSZFEXXX0PFXa_!!200-0-yamato.jpg_2200x2200Q30s0.jpg_.webp" alt=""></div>
+                <div class="swiper-slide"><img src="http:////img.alicdn.com/tps/i4/TB1xJg2PFXXXXbjXpXXSutbFXXX.jpg_2200x2200Q30s0.jpg_.webp" alt=""></div>
+                <div class="swiper-slide"><img src="//gw.alicdn.com/imgextra/i4/152/TB2vXXWfR0kpuFjSsziXXa.oVXa_!!152-0-yamato.jpg_2200x2200Q30s0.jpg_.webp" alt=""></div>
+                <div class="swiper-slide"><img src="//gw.alicdn.com/imgextra/i1/76/TB2bow3g7qvpuFjSZFhXXaOgXXa_!!76-0-yamato.jpg_2200x2200Q30s0.jpg_.webp" alt=""></div>
+                <div class="swiper-slide"><img src="//img.alicdn.com/imgextra/i1/101/TB2viq4ghtmpuFjSZFqXXbHFpXa_!!101-0-yamato.jpg_2200x2200Q30s0.jpg_.webp" alt=""></div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <div class="money-count">
+        <div>
+            <h2>累计成交金额</h2>
+            <p>29,089,80万元</p>
+        </div>
+        <div>
+            <h2>为投资人赚取利益</h2>
+            <p>29,089,80万元</p>
+        </div>
+    </div>
+    <div class="money-list">
+        <div class="money-main" >
+
+            <div class="money-list" ng-controller="CpLeftCtrl">
+                <div class="money-list-box" ng-repeat="i in data.data.list">
+                    <div class="money-list-top">
+                        <span>{{i.safeguardWay}}</span><span>{{i.name}}</span>
+                    </div>
+                    <div class="money-list-bottom">
+                        <p>{{i.annualRate}}</p>
+                        <p class="money-list-bottom-two">
+                            <span>年化收益</span>
+                            <span>.0%</span>
+                        </p>
+                        <p class="money-list-bottom-three">
+                            <span>期限</span>
+                            <span>{{i.investmentHorizon}}</span>
+                        </p>
+                        <p>
+                            <my-canvas cvs="i"></my-canvas>
+                            <span>抢购</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

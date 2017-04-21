@@ -1,0 +1,34 @@
+/**
+ * Created by Administrator on 2017/3/1.
+ */
+angular.module('myapp')
+    .config(function($stateProvider,$urlRouterProvider){
+        $urlRouterProvider.otherwise('/');
+        $stateProvider
+            .state('home',{
+                url:'/',
+                templateUrl:'page/home.html',
+                controller:"homeCtrl"
+            })
+            .state('chanpin',{
+                url:'/chapin',
+                templateUrl:'page/chanpin.html',
+                controller:'chanpinCtrl'
+            })
+            .state('chanpin.left',{
+                url:'/chapinleft',
+                templateUrl:'page/chanpin/cpleft.html'
+            })
+            .state('chanpin.right',{
+                url:'/chapinright',
+                templateUrl:'page/chanpin/cpright.html'
+            })
+            .state('my',{
+                url:'/my',
+                templateUrl:'page/my.html'
+            })
+            .state('more',{
+                url:'/more',
+                templateUrl:'page/more.html'
+            })
+    });

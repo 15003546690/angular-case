@@ -1,0 +1,37 @@
+<header class="video-header">
+    <div class="icon-group left-icon-group">
+    </div>
+    <h2>首页</h2>
+    <div class="icon-group right-icon-group">
+        <a href="" class="icon add-icon" ui-sref="search"><img src="images/home-icon-one.jpg" alt=""/></a>
+        <a href="" class="icon add-icon"><img src="images/home-icon-two.jpg" alt=""/></a>
+    </div>
+</header>
+<div class="video-main">
+    <div class="video-main-banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="//r1.ykimg.com/0510000058B6DE64ADC0AE056C021C31" alt=""></div>
+                <div class="swiper-slide"><img src="//r1.ykimg.com/0510000058AEA113AD9E07055A01A394" alt=""></div>
+                <div class="swiper-slide"><img src="//r1.ykimg.com/0510000058AD4397ADC0B003E905EDA8" alt=""></div>
+                <div class="swiper-slide"><img src="//r1.ykimg.com/0510000058B05D5CADC0AE055B0D2687" alt=""></div>
+                <div class="swiper-slide"><img src="//r1.ykimg.com/0510000058B7989DAD9E07056503AFD9" alt=""></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <div ui-view="" class="food-info" ng-controller="Mctro">
+        <div class="food-info-cate" ng-repeat="i in data.data">
+            <dl>
+                <dt><img ng-src='{{i.title_pic}}' alt="images/a.jpg"/></dt>
+                <dd>{{i.name}}</dd>
+                <dd class="d-text">{{i.info}}</dd>
+            </dl>
+            <dl>
+                <dt><img ng-src='{{i.title_pic}}' alt="images/a.jpg"/></dt>
+                <dd>{{i.name}}</dd>
+                <dd class="d-text">{{i.info}}</dd>
+            </dl>
+        </div>
+    </div>
+</div>

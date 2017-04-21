@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="lib/Swiper-3.4.0/dist/css/swiper.min.css"/>
+</head>
+<body ng-app="myapp">
+    <div class="video-wrap">
+        <div class="video-box" ui-view=""></div>
+        <footer class="video-footer footer">
+            <a href="javascript:;" ui-sref="home" ui-sref-active="active">
+                首页
+            </a>
+            <a href="javascript:;" ui-sref="name" ui-sref-active="active">
+                片库
+            </a>
+            <a href="javascript:;" ui-sref="download" ui-sref-active="active">
+               离线下载
+            </a>
+            <a href="javascript:;" ui-sref="my" ui-sref-active="active">
+                个人中心
+            </a>
+        </footer>
+    </div>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/config.js"></script>
+    <script src="lib/Swiper-3.4.0/dist/js/swiper.min.js"></script>
+    <script src="js/homeMctrl.js"></script>
+    <script src="js/searchMctrl.js"></script>
+</body>
+</html>

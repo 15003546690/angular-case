@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" ng-model='txt'>
+	<p>{{txt | currency}}</p>
+	<ul>
+		<li ng-repeat='i in arr |selfFilter | filter:"3" | orderBy:"age" | limitTo:2 ' >{{'我的名字叫'+i.name+'，'+'我的年龄是'+i.age}}</li>
+	</ul>
+	<script src="angular.min.js"></script>
+	<script>
+		var app=angular.module('app',[]);
+			app.filter('selfFilter',function(){
+				return function(data){
+					console.log(data);
+					var arr=[];
+					for(var i=0;i<data.length;i++){					
+						if(data[i].age>=30){
+							arr.push(data[i])
+						}
+					}
+					return arr
+				}
+			});
+			app.run(function($rootScope){
+				$rootScope.arr=[
+					{
+						name:'zhangs',
+						age:'38',
+						gender:'man'
+					},
+					{
+						name:'lis',
+						age:'23',
+						gender:'man'
+					},
+					{
+						name:'wangw',
+						age:'33',
+						gender:'woman'
+					},
+					{
+						name:'zhaol',
+						age:'17',
+						gender:'woman'
+					}
+				]
+			})
+	</script>
+</body>
+</html>

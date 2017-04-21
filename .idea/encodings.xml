@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/exam/js/searchMctrl.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ionic/js/config.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/money/js/config.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/money/lib/data.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/money/page/chanpin/cpleft.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/money/page/chanpin/cpright.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/money/page/home.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/money/page/more.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/money/page/my.html" charset="UTF-8" />
+  </component>
+</project>

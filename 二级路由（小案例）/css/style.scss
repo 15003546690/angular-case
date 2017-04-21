@@ -1,0 +1,159 @@
+#wrap{
+  width: 100%;
+}
+html,body{
+  overflow: hidden;
+}
+.weibo-header{
+  color: #FFFFFF;
+  width: 100%;
+  height: 44px;
+  position: relative;
+  position:fixed;
+  border-bottom:1px solid #ccc;
+  background: green;
+  top:0px;
+  z-index:1;
+  .title{
+    position: absolute;
+    left: 90px;
+    right: 90px;
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+    font-size: 16px;
+    height: 33px;
+    line-height: 30px;
+    top: 5px;
+    border-radius: 18px;
+    border: solid 1px;
+    span{
+      display: inline-block;
+      width: 50px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+    }
+  }
+  .icon-group{
+    height: 44px;
+    padding: 0 15px;
+    display: -webkit-box;
+    -webkit-box-align:center;
+    a{
+      text-decoration: none;
+      color: #fff;
+    }
+    &.left-icon-group{
+      float: left;
+    }
+    &.right-icon-group{
+      float:right;
+    }
+  }
+}
+.weibo-footer{
+  width: 100%;
+  height: 54px;
+  display: -webkit-box;
+  -webkit-box-align:center;
+  position: fixed;
+  bottom: 0px;
+  border-top: 1px solid #ccc;
+  background: #fff;
+  a{
+    display: block;
+    -webkit-box-flex:1;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    .step-one{
+      display: block;
+      width: 25px;
+      height: 25px;
+      background: url(../images/step-one.jpg) no-repeat;
+      background-size: 100%;
+      margin: 0 auto;
+    }
+    .step-two{
+      display: block;
+      width: 25px;
+      height: 25px;
+      background: url(../images/step-two.jpg) no-repeat;
+      background-size: 100%;
+      margin: 0 auto;
+    }
+    .step-three{
+      display: block;
+      width: 44px;
+      height: 44px;
+      background: #fe8100;
+      text-align: center;
+      line-height: 39px;
+      border-radius: 5px;
+      color: #fff;
+      font-style: normal;
+      font-size: 47px;
+      margin: 0 auto
+    }
+    .step-four{
+      display: block;
+      width: 25px;
+      height: 25px;
+      background: url(../images/step-three.jpg) no-repeat;
+      background-size: 100%;
+      margin: 0 auto;
+    }
+    .step-five{
+      display: block;
+      width: 25px;
+      height: 25px;
+      background: url(../images/step-four.jpg) no-repeat;
+      background-size: 100%;
+      margin: 0 auto;
+    }
+  }
+}
+.food-nav{
+  margin-top: 45px;
+  width: 100%;
+  height: 40px;
+  display: -webkit-box;
+  border-bottom: 1px solid #666;
+  a{
+    color: green;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    -webkit-box-flex:1;
+    text-decoration: none;
+    &.bord{
+      border-left: solid 1px;
+      border-right: solid 1px;
+    }
+    span{
+      margin-left: 8px;
+    }
+  }
+}
+.food-info-cate{
+  padding: 10px;
+  width: 100%;
+  display: -webkit-box;
+  dl{
+    width: 45%;
+
+    dt{
+      img{
+        width: 100%;
+      }
+    }
+    dd{
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+}
+.active{
+  background:lightpink;
+}

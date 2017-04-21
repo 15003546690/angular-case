@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="mapp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-controller="ctrl">
+    {{txt}}
+    <my-directive txt="txt" txt1="{{txt1}}">
+
+    </my-directive>
+</div>
+
+<script src="angular.min.js"></script>
+<script>
+    var app=angular.module("mapp",[])
+            .controller("ctrl",function($scope){
+                $scope.txt="asaaaa";
+                $scope.txt1="bbbbbb"
+            })
+            .directive("myDirective",function(){
+                return{
+                    restrict:"EA",
+                    scope:{
+                        txt:"=",
+                        txt1:"@"
+                    },
+                    template:"<div><h1>{{txt}}</h1><h2>{{txt1}}</h2></div>"
+                }
+            })
+</script>
+</body>
+</html>

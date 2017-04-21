@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box">
+		<input type="text" ng-model='txt'>
+		<!--<p>{{txt | currency}}</p>-->
+	</div>
+	<ul>
+		<!-- |filter : { gender:'man' }  或者  | filter:"g" -->
+		<li ng-repeat='i in arr | filter:_filter | orderBy:"age" | limitTo:2'>{{'我的名字是'+i.name+'我的年龄是'+i.age}}</li>
+	</ul>
+	<script src="angular.min.js"></script>
+	<script>
+		var app=angular.module('app',[]);
+			app.run(function($rootScope,$filter){
+				$rootScope.arr=[
+					{
+						name:'zhangs',
+						age:'38',
+						gender:'man'
+					},
+					{
+						name:'lis',
+						age:'23',
+						gender:'man'
+					},
+					{
+						name:'wangw',
+						age:'33',
+						gender:'woman'
+					},
+					{
+						name:'zhaol',
+						age:'17',
+						gender:'woman'
+					}
+				];
+				$rootScope._filter=function(data){
+					console.log(data);
+					if(data.age>20){
+						return data
+					}
+				}
+			})
+	</script>
+</body>
+</html>

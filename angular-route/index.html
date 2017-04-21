@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100%;
+            height: 500px;
+            border: solid 1px red;
+        }
+    </style>
+</head>
+<body ng-app="myapp">
+    <ul>
+        <li><a href="#/">首页</a></li>
+        <li><a href="#/list">列表</a></li>
+        <li><a href="#/news">新闻页</a></li>
+        <li><a href="#/contact">联系我们</a></li>
+    </ul>
+    <div ng-view class="box">
+
+    </div>
+    <script src="angular.min.js"></script>
+    <script src="angular-route.js"></script>
+    <script>
+        var app=angular.module('myapp',['ngRoute']);
+            app.config(function($routeProvider){
+                $routeProvider
+                    .when('/',{
+                        template:'<div>this is 首页</div>'
+                     })
+                    .when('/list',{
+                        template:'<div>this is 列表页</div>'
+                    })
+                    .when('/news',{
+                        template:'<div>this is 新闻页</div>'
+                    })
+                    .when('/contact',{
+                        templateUrl:'page/contact.html'
+                    })
+            })
+    </script>
+</body>
+</html>

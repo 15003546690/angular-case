@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/reset.css">
+</head>
+<body>
+	<div class="max-box max">
+		<div class="max-box-left">
+			<img src="images/left.png" alt="">
+		</div>
+		<div class="max-box-center">
+			<p>请输入手机号码，免费领取红包</p>
+			<p><input type="text" placeholder="手机号" required=""></p>
+			<p><input type="text" placeholder="验证码"></p>
+			<input type="submit" value="立即预定" class="sub">
+		</div>
+		<div class="max-box-right">
+			<p>艺龙APP下载</p>
+			<div>
+				<img src="images/right.png" alt="">
+			</div>
+		</div>
+		<div class="max-box-close close">×</div>
+	</div>
+	<div class="min-box min">
+		<img src="images/min-img.png" alt="">
+		<p class="min-box-icon right">〉</p>
+	</div>
+	<script src="js/jquery-2.1.1.js"></script>
+	<script>
+		/*$('.right').on('click',function(){
+			$('.min').css({'display':'none'})
+			$('.max').animate({
+				"left":"0"
+			},1000)
+		})
+		var left=$('.max').position().left
+		$('.close').on('click',function(){
+			$('.max').animate({
+				"left":"-1300"
+			},1000)
+			setTimeout("$('.min').css({'display':'block'})",1000)		
+		})
+		
+		console.log(left)*/
+
+
+
+
+		//面向对象
+		function Move(){
+			this.right=$('.right');
+			this.min=$('.min');
+			this.close=$('.close');
+			this.max=$('.max')
+		}
+		Move.prototype.init=function(){
+			this.oppen()
+			this.closee()
+		}
+		Move.prototype.oppen=function(){
+			var that=this
+			this.right.on('click',function(){
+				that.min.css({'display':'none'})
+				that.max.animate({
+					"left":"0"
+				},1000)
+			})
+		}
+		Move.prototype.closee=function(){
+			var that=this
+			this.close.on('click',function(){
+				that.max.animate({
+					"left":"-1300"
+				},1000,function(){
+					that.min.css({'display':'block'})
+				})
+						
+			})
+		}
+		var p1=new Move()
+		p1.init()
+	</script>
+</body>
+</html>

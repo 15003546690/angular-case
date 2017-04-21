@@ -1,0 +1,24 @@
+/**
+ * Created by Administrator on 2017/2/21.
+ */
+angular.module('myapp')
+    .config(function($stateProvider,$urlRouterProvider){
+        $urlRouterProvider.otherwise('home');
+        $stateProvider
+            .state('home',{
+                url:'/home',
+                templateUrl:'page/home.html',
+                controller:'homeCtrl',
+                data:[1,2,3]
+            })
+            .state('list',{
+                url:'/list?id&name',
+                templateUrl:'page/list.html',
+                controller:'listCtrl'
+            })
+            .state('detal',{
+                url:'/detal',
+                templateUrl:'page/detal.html',
+                controller:'detalCtrl'
+            })
+    });

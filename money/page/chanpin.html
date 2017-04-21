@@ -1,0 +1,18 @@
+<header class="money-header">
+    <div class="icon-group left-icon-group">
+
+    </div>
+    <h2>理财产品</h2>
+    <div class="icon-group right-icon-group">
+        <a href="" class="icon add-icon" ng-click="toggle()"><img src="images/chanpin-icon.jpg" alt=""/></a>
+    </div>
+</header>
+<div class="cp-top">
+    <div ui-sref="chanpin.left" ui-sref-active="cp-active">
+        债权产品
+    </div>
+    <div ui-sref="chanpin.right" ui-sref-active="cp-active">
+       优选基金
+    </div>
+</div>
+<div class="cp-content" ui-view=""></div>

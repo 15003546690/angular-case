@@ -1,0 +1,40 @@
+angular.module('myapp')
+    .controller('searchMctrl',function($scope,$http){
+        $scope.arr=[
+            {
+                name:'美人如画'
+            },
+            {
+                name:'刀客家族的女人'
+            },
+            {
+                name:'犀利人师'
+
+            },
+            {
+                name:'美国队长'
+
+            },
+            {
+                name:'海贼王'
+            },
+            {
+                name:'幸福从天而降'
+            },
+            {
+                name:'陆贞传奇'
+            },
+            {
+                name:'大笑江湖'
+            },
+            {
+                name:'恋空'
+            }
+        ];
+        $scope._filter=function(data){
+            console.log(data);
+            if(data.age>20){
+                return data
+            }
+        }
+    });

@@ -1,0 +1,109 @@
+#travel-box {
+  width: 100%; }
+
+.travel-header {
+  width: 100%;
+  height: 44px;
+  background: #3da9fe;
+  position: relative; }
+  .travel-header h1 {
+    line-height: 44px;
+    position: absolute;
+    left: 80px;
+    right: 80px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff; }
+  .travel-header .icon-group {
+    height: 44px;
+    padding: 0 5px;
+    display: -webkit-box;
+    -webkit-box-align: center; }
+    .travel-header .icon-group.left-icon-group {
+      float: left; }
+    .travel-header .icon-group.right-icon-group {
+      float: right; }
+    .travel-header .icon-group .icon {
+      width: 27px;
+      height: 27px;
+      display: inline-block;
+      margin: 0 5px; }
+      .travel-header .icon-group .icon.back-icon {
+        background: url(../images/back-icon.jpg) no-repeat;
+        margin-top: 14px; }
+      .travel-header .icon-group .icon.go-icon {
+        background: url(../images/go-icon.jpg) no-repeat;
+        margin-top: 14px; }
+
+.travel-nav {
+  width: 100%;
+  height: 44px;
+  display: -webkit-box; }
+  .travel-nav a {
+    text-decoration: none;
+    display: block;
+    -webkit-box-flex: 1;
+    text-align: center;
+    border: solid 1px #ccc;
+    color: #3da9fe; }
+    .travel-nav a i {
+      display: block;
+      height: 42px;
+      line-height: 42px;
+      font-style: normal; }
+      .travel-nav a i.on {
+        border-bottom: solid 3px #3da9fe; }
+
+.travel-list {
+  width: 100%;
+  padding: 0px 15px;
+  display: -webkit-box;
+  -webkit-box-flex: 1;
+  overflow: hidden; }
+  .travel-list dl {
+    display: -webkit-box;
+    padding: 10px 0px;
+    border-bottom: solid 1px;
+    overflow: hidden; }
+    .travel-list dl dt {
+      width: 30%;
+      margin-right: 10px; }
+      .travel-list dl dt img {
+        width: 100%; }
+    .travel-list dl dd {
+      width: 70%; }
+      .travel-list dl dd p {
+        width: 85%; }
+      .travel-list dl dd .p1 {
+        font-size: 14px;
+        font-weight: bold;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden; }
+      .travel-list dl dd .p2 {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        color: #999; }
+      .travel-list dl dd .p3 {
+        line-height: 40px; }
+        .travel-list dl dd .p3 span {
+          width: 30px;
+          height: 20px;
+          border-radius: 10px;
+          background: #3da9fe;
+          margin-right: 10px;
+          color: #fff; }
+        .travel-list dl dd .p3 i {
+          font-style: normal;
+          color: #3da9fe; }
+        .travel-list dl dd .p3 strong {
+          float: right;
+          font-size: 20px;
+          color: red; }
+
+.click {
+  width: 100%; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,24 @@
+{
+  "data":   [
+              {
+                "name":"陆贞传奇",
+                "info":"讲述了北齐王朝女官陆贞的故事超出点点点",
+                "title_pic": "images/1.jpg"
+              },
+              {
+                "name":"大笑江湖",
+                "info":"吴迪（小沈阳试）以修鞋为超出点点点",
+                "title_pic": "images/2.jpg"
+              },
+              {
+                "name":"恋空",
+                "info":"2000夏天，普通高中一年级超出点点点",
+                "title_pic": "images/3.jpg"
+              },
+              {
+                "name":"继承者们",
+                "info":"王子与灰姑娘的故事超出点点点",
+                "title_pic": "images/4.jpg"
+              }
+      ]
+}

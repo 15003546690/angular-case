@@ -1,0 +1,33 @@
+/**
+ * Created by Administrator on 2017/2/27.
+ */
+angular.module('myapp')
+    .config(function($stateProvider,$urlRouterProvider){
+        $urlRouterProvider.otherwise('/');
+        $stateProvider
+            .state('otherwise',{
+                url:'/',
+                templateUrl:'page/login.html'
+            })
+            .state('home',{
+                url:'/home',
+                templateUrl:'page/home.html'
+            })
+            .state('home.cact',{
+                url:'/cact',
+                templateUrl:'page/cact.html'
+            })
+            .state('home.sort',{
+                url:'/sort',
+                templateUrl:'page/sort.html'
+            })
+            .state('home.filt',{
+                url:'/filt',
+                templateUrl:'page/filt.html'
+            })
+            .state('home.my',{
+                url:'/my',
+                templateUrl:'page/my.html'
+            })
+
+});
